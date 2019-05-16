@@ -1,0 +1,20 @@
+---
+# defaults file for logrotate_mongodb
+
+logrotate_mongodb_log_dir: /var/log/mongodb
+# description: Directory which MongoDB logs reside
+
+logrotate_mongodb_rotate: 2
+# description: Number of rotation to retain
+
+logrotate_mongodb_maxsize: 100M
+# description: Log files are rotated only if they grow bigger then (N) size
+
+logrotate_mongodb_config_file: /etc/logrotate.d/mongodb
+# description: Location of MongoDB logrorate configuration
+
+logrotate_mongodb_cron_file: /etc/cron.d/mongodb-logrotate
+# description: Location of hourly cron schedule that trigger MongoDB logrotate
+
+logrotate_mongodb_cron_minute: 17
+# description: Minute when cron will be triggered every hour.

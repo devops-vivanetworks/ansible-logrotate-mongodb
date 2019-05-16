@@ -1,0 +1,6 @@
+---
+  
+- hosts: all
+  roles:
+    - role: ../../
+      logrotate_mongodb_rotate: 1

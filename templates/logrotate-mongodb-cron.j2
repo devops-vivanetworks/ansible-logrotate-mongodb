@@ -1,0 +1,4 @@
+MAILTO=""
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+17 * * * * root logrotate -s /var/log/logstatus {{ logrotate_mongodb_config_file }}

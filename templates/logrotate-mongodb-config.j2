@@ -1,0 +1,11 @@
+{{ logrotate_mongodb_log_dir }}/mongod.log {
+    size {{ logrotate_mongodb_maxsize }}
+    rotate {{ logrotate_mongodb_rotate }}
+    delaycompress
+    compress
+    missingok
+    notifempty
+    postrotate
+        /usr/bin/killall -SIGUSR1 mongod
+    endscript
+}

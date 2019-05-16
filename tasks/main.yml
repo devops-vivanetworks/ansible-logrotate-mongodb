@@ -1,0 +1,20 @@
+---
+
+- block:
+
+  - name: copy logrotate config for mongodb_hourly
+    template:
+      dest: "{{ logrotate_mongodb_config_file }}"
+      src:  logrotate-mongodb-config.j2
+      mode: 0644
+
+  - name: copy logrotate mongodb_hourly cron schedule
+    template:
+      dest: "{{ logrotate_mongodb_cron_file }}"
+      src: logrotate-mongodb-cron.j2
+      mode: 0644
+
+  become: yes
+  become_method: sudo
+  tags:
+    - logrotate_mongodb
